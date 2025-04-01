@@ -14,6 +14,35 @@
     margin-top: 5px;
 }
 
+.categoryFilter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.categoryButton {
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.categoryButton:hover {
+    background-color: var(--hover-bg);
+}
+
+.categoryButton.active {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
 .tourGrid {
     display: grid;
     /* Responsive grid: Adjust minmax for desired card size */

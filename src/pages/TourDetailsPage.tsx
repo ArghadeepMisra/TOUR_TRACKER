@@ -1,8 +1,8 @@
 // src/pages/TourDetailsPage.tsx
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getTourDetails } from '../data/tours';
-import { TourDetailsData, TourStop, ProfileLinkState } from '../types';
+import { getTourDetails, getActiveTours } from '../data/tours';
+import { TourDetailsData, TourStop, ProfileLinkState, ActiveTour } from '../types';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Button from '../components/Button'; // Import Button component
 import styles from './TourDetailsPage.module.css';
@@ -25,6 +25,7 @@ const getStatusClass = (status: string | null | undefined): string => {
 const TourDetailsPage: React.FC = () => {
   const { tourId } = useParams<{ tourId: string }>();
   const [tourDetails, setTourDetails] = useState<TourDetailsData | null>(null);
+  const [tourCategory, setTourCategory] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -43,6 +44,13 @@ const TourDetailsPage: React.FC = () => {
         const data = await getTourDetails(tourId);
         if (data) {
           setTourDetails(data);
+          
+          // Get the category from active tours - using regular import instead of dynamic import
+          const activeTours = await getActiveTours();
+          const tourInfo = activeTours.find((tour: ActiveTour) => tour.tourId === tourId);
+          if (tourInfo) {
+            setTourCategory(tourInfo.category);
+          }
         } else {
           setError("Tour not found.");
         }
@@ -96,6 +104,7 @@ const TourDetailsPage: React.FC = () => {
     <div>
       <header className={styles.pageHeader}>
         <h1>{`Tour Status: ${tourDetails.iemName}`}</h1>
+        {tourCategory && <div className={styles.categoryTag}>{tourCategory}</div>}
       </header>
 
       {/* Current Status Section */}
@@ -184,7 +193,7 @@ const TourDetailsPage: React.FC = () => {
               ) : (
                 <tr>
                   <td colSpan={6} style={{ textAlign: 'center', fontStyle: 'italic' }}>
-                    No tour history logged yet for this IEM.
+                    No tour history logged yet.
                   </td>
                 </tr>
               )}

@@ -14,9 +14,10 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
 
   return (
     <Link to={`/tour/${encodeURIComponent(tour.tourId)}`} className={styles.tourCard}>
+      <div className={styles.categoryBadge}>{tour.category}</div>
       <img
         src={tour.imageUrl || defaultImage}
-        alt={`${tour.iemName} IEM`}
+        alt={`${tour.iemName} - ${tour.category}`}
         className={styles.tourImage}
         // Add onError handler to show default image if provided URL fails
         onError={(e) => (e.currentTarget.src = defaultImage)}
