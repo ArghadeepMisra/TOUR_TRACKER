@@ -1,0 +1,160 @@
+/* src/pages/LoginPage.module.css */
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background);
+  padding: 20px;
+}
+
+.loginCard {
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 30px;
+  border: 1px solid var(--border-color);
+}
+
+.logoContainer {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logoText {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.logoTagline {
+  font-size: 16px;
+  color: var(--secondary-text);
+  margin: 5px 0 0 0;
+  font-weight: 500;
+}
+
+.loginTitle {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-text);
+}
+
+.errorMessage {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #e74c3c;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--secondary-text);
+}
+
+.formGroup input {
+  padding: 12px 16px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--primary-text);
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(var(--accent-color-rgb), 0.3);
+}
+
+.formGroup input::placeholder {
+  color: var(--placeholder-color, #666);
+  opacity: 0.6;
+}
+
+.forgotPassword {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.forgotPassword a {
+  font-size: 14px;
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.forgotPassword a:hover {
+  text-decoration: underline;
+}
+
+.loginButton {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px !important;
+  font-size: 16px !important;
+}
+
+.signupLink {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--secondary-text);
+}
+
+.signupLink a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signupLink a:hover {
+  text-decoration: underline;
+}
+
+.demoCredentials {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  font-size: 14px;
+}
+
+.demoCredentials h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.demoCredentials p {
+  margin: 5px 0;
+  color: var(--primary-text);
+}
+
+.demoNote {
+  margin-top: 10px !important;
+  font-style: italic;
+  font-size: 12px;
+  color: var(--secondary-text) !important;
+} 
