@@ -1,0 +1,114 @@
+/* src/pages/UserProfilePage.module.css */
+
+.profileHeader {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    position: relative;
+}
+/* Adjust header when picture is present */
+.profileHeader.hasPic {
+   padding-top: 10px;
+}
+
+.profilePic {
+    display: block;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+    margin: 0 auto 20px auto;
+    object-fit: cover;
+    background-color: var(--surface-color);
+}
+
+.profileName { /* Target the H1 */
+  margin-bottom: 5px;
+}
+
+.backLinkContainer {
+   /* If you want the back button positioned absolutely like before: */
+   position: absolute;
+   top: 15px;
+   left: 0px; /* Adjust as needed */
+   /* Or just let it flow in the header */
+   margin-bottom: 15px; /* Add space below if it's not absolute */
+   width: 100%; /* Ensure it doesn't overlap profile pic if centered */
+   text-align: left; /* Align button left */
+}
+
+ @media (max-width: 600px) {
+   .backLinkContainer {
+      position: static; /* Stack on mobile */
+      text-align: center;
+      margin-bottom: 20px;
+   }
+   .profileHeader.hasPic {
+      padding-top: 0;
+   }
+ }
+
+/* Profile Details Card */
+.detailsItem {
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+.detailsItem strong {
+    color: var(--secondary-text);
+    min-width: 120px;
+    display: inline-block;
+    text-align: right;
+    flex-shrink: 0;
+}
+.detailsItem span {
+    color: var(--primary-text);
+}
+
+/* HeadFi Button Styling (handled by Button component) */
+.headfiButtonContainer {
+    /* Add margin if needed */
+}
+
+ @media (max-width: 500px) {
+   .detailsItem { flex-direction: column; align-items: flex-start; }
+   .detailsItem strong { text-align: left; margin-bottom: 3px; min-width: auto;}
+ }
+
+
+/* Past Tours List */
+.toursList {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tourHistoryItem {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 12px 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--accent-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.tourHistoryItem:last-child {
+    margin-bottom: 0;
+}
+
+.tourName {
+    font-weight: 500;
+    color: var(--primary-text);
+}
+
+.tourDates {
+    font-size: 0.9em;
+    color: var(--secondary-text);
+    white-space: nowrap;
+}

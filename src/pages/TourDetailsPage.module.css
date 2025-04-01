@@ -1,0 +1,99 @@
+/* src/pages/TourDetailsPage.module.css */
+
+.pageHeader {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+}
+.pageHeader h1 { margin-bottom: 0; }
+
+/* Current Status Section */
+.statusGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.statusItem {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 12px 15px;
+    border-radius: 5px;
+    border-left: 4px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.statusItem strong {
+    color: var(--secondary-text);
+    font-size: 0.9em;
+    display: block;
+}
+.statusItem span,
+.statusItem a { /* Style link within status item */
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--primary-text); /* Ensure link isn't blue by default */
+    text-decoration: none;
+}
+ .statusItem a:hover {
+     color: var(--link-hover-color);
+     text-decoration: underline;
+ }
+
+
+/* Tour History Table */
+.tableResponsive {
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 15px; /* Add space above table within card */
+}
+
+.historyTable {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.historyTable th,
+.historyTable td {
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.historyTable thead th {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--primary-text);
+    font-weight: 600;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom-width: 2px;
+}
+
+.historyTable tbody tr {
+    transition: background-color 0.2s ease;
+}
+.historyTable tbody tr:last-child td {
+    border-bottom: none;
+}
+.historyTable tbody tr:hover {
+    background-color: var(--hover-bg);
+}
+
+.currentHolder {
+    font-weight: bold;
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+/* Page Footer Navigation */
+.pageFooterNav {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}

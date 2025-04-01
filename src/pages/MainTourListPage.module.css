@@ -1,0 +1,32 @@
+/* src/pages/MainTourListPage.module.css */
+.pageHeader {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+}
+.pageHeader h1 { /* Already styled globally, but can override */
+    margin-bottom: 5px;
+}
+.pageHeader p {
+    color: var(--secondary-text);
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+.tourGrid {
+    display: grid;
+    /* Responsive grid: Adjust minmax for desired card size */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Space between cards */
+    padding-top: 10px;
+}
+
+.loadingMessage, .errorMessage {
+    grid-column: 1 / -1; /* Span all columns */
+    text-align: center;
+    font-style: italic;
+    color: var(--secondary-text);
+    font-size: 1.1em;
+    padding: 40px 0;
+}
